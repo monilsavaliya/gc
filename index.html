@@ -92,6 +92,11 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+            .hostel-name a {
+    text-decoration: none;
+    color: inherit;
+}
+
 
             .hostel-points {
                 margin-top: 1rem;
@@ -342,7 +347,7 @@
                     <div class="hostel-header">
                         <div>
                             <div class="hostel-rank">${rankBadge} #${index + 1}</div>
-                            <div class="hostel-name">${hostel.name}</div>
+                            <div class="hostel-name"><a href="https://bhm.iitd.ac.in/hostel/${hostel.name.toLowerCase()}" target="_blank">${hostel.name}</a></div>
                         </div>
                         <div class="hostel-points">${hostel.points.toFixed(2)} pts</div>
                     </div>
