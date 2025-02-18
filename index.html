@@ -129,6 +129,74 @@ footer h5 a {
         .gold { background: #ffd700; }
         .silver { background: #c0c0c0; }
         .bronze { background: #cd7f32; }
+        .popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #2980dd;
+  margin: 15% auto;
+  padding: 20px;
+  width: 70%;
+  max-width: 500px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  /* Add these for better content containment */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Add this image styling */
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border-radius: 4px;
+  /* Optional: Add max-height if needed */
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #ffffff;
+  z-index: 10000; /* Ensure close button stays on top */
+}
+
+.close-btn:hover {
+  color: #000;
+}
+.ad-text {
+  max-height: 200px;
+  overflow-y: auto  ;
+  padding: 0 15px;
+}
+.ad-text h2{
+    text-align: center;
+    color: #0d0f11;}
+@media (max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    margin: 5% auto;
+  }
+  
+  .popup-content img {
+    max-height: 200px;
+  }
+}
     </style>
 </head>
 <body>
@@ -136,6 +204,20 @@ footer h5 a {
         <h1>GENERAL CHAMPIONSHIP 2025</h1>
         
     </div>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          
+          <!-- Image first -->
+          <img src="https://github.com/monilsavaliya/image/blob/main/20250218_094749.jpg?raw=true" alt="Advertisement">
+          
+          <!-- Text content below image -->
+          <div class="ad-text">
+            <h2>Online learning platform is coming....</h2>
+
+          </div>
+        </div>
+      </div>
      <footer>
         <h5>
             <a href="https://www.instagram.com/thisismonil/#">
@@ -414,6 +496,13 @@ footer h5 a {
         }
 
         window.addEventListener('DOMContentLoaded', createHostelCards);
+        window.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById('popup').style.display = 'block';
+  });
+  
+  function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+  }
     </script>
 </body>
 </html>
